@@ -6,7 +6,7 @@ class PlacesAutocompleteResponse {
 
   PlacesAutocompleteResponse.fromJson(Map<String, dynamic> json) {
     if (json['predictions'] != null) {
-      predictions = new List<Prediction>();
+      predictions = <Prediction>[];
       json['predictions'].forEach((v) {
         predictions.add(new Prediction.fromJson(v));
       });
@@ -52,7 +52,7 @@ class Prediction {
     description = json['description'];
     id = json['id'];
     if (json['matched_substrings'] != null) {
-      matchedSubstrings = new List<MatchedSubstrings>();
+      matchedSubstrings = <MatchedSubstrings>[];
       json['matched_substrings'].forEach((v) {
         matchedSubstrings.add(new MatchedSubstrings.fromJson(v));
       });
@@ -63,7 +63,7 @@ class Prediction {
         ? new StructuredFormatting.fromJson(json['structured_formatting'])
         : null;
     if (json['terms'] != null) {
-      terms = new List<Terms>();
+      terms = <Terms>[];
       json['terms'].forEach((v) {
         terms.add(new Terms.fromJson(v));
       });

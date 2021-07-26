@@ -57,7 +57,7 @@ class Result {
 
   Result.fromJson(Map<String, dynamic> json) {
     if (json['address_components'] != null) {
-      addressComponents = new List<AddressComponents>();
+      addressComponents = <AddressComponents>[];
       json['address_components'].forEach((v) {
         addressComponents.add(new AddressComponents.fromJson(v));
       });
@@ -70,7 +70,7 @@ class Result {
     icon = json['icon'];
     name = json['name'];
     if (json['photos'] != null) {
-      photos = new List<Photos>();
+      photos = <Photos>[];
       json['photos'].forEach((v) {
         photos.add(new Photos.fromJson(v));
       });
